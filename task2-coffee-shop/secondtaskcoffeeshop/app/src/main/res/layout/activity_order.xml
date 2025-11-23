@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F9F9"
+    tools:context=".OrderActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:contentDescription="@string/coffee_image_description"
+                android:src="@drawable/icon_chevron_left" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Order"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:padding="4dp"
+            android:background="@drawable/bg_brown_outline_button"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_brown_button_curved"
+                android:textSize="18sp"
+                android:text="deliver"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#ececec"
+                android:text="Pick Up"
+                android:textSize="18sp"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="24dp"
+            android:text="Delivery Address"
+            android:textColor="@android:color/black"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="16dp"
+            android:text="Jl. Kpg Sutoyo"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="4dp"
+            android:textSize="14sp"
+            android:text="again there was a problem downloading the icons (discount and wallet). i tried everything but they still look weird"
+            android:textColor="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:background="@drawable/bg_round_selection"
+                android:drawableStart="@drawable/icon_edit"
+                android:drawablePadding="6dp"
+                android:paddingHorizontal="12dp"
+                android:text="Edit Address"
+                android:textAllCaps="false" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_round_selection"
+                android:drawableStart="@drawable/icon_document"
+                android:drawablePadding="6dp"
+                android:paddingHorizontal="12dp"
+                android:text="Add Note"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="300dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:background="@android:color/darker_gray"
+            android:paddingHorizontal="100dp" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_brown_button_curved"
+                    android:clipToOutline="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@string/coffee_image_description"
+                        android:src="@drawable/detail_item_coffee" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Caffe Mocha"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deep Foam"
+                        android:textSize="18sp"
+                        android:textColor="@android:color/darker_gray" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_round_selection"
+                    android:contentDescription="@string/coffee_image_description"
+                    android:padding="5dp"
+                    android:src="@drawable/icon_minus" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:text="1"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_round_selection_plus"
+                    android:padding="5dp"
+                    android:contentDescription="@string/coffee_image_description"
+                    android:src="@drawable/icon_plus" />
+            </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_gravity="center"
+            android:background="#ece1d9"
+            android:paddingHorizontal="100dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_discount_button"
+            android:drawableStart="@drawable/icon_discount"
+            android:drawableEnd="@drawable/icon_arrow_right"
+            android:drawablePadding="16dp"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:text="1 Discount is Applied"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="28dp"
+            android:text="Payment Summary"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="18dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:textSize="18sp"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="$ 4.53"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delivery Fee"
+                android:textSize="18sp"
+                android:textColor="@android:color/black" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 2.0"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="$ 1.0"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/bg_white_box"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:contentDescription="@string/coffee_image_description"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/icon_wallet" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cash/Wallet"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$ 5.53"
+                        android:textColor="#C67C4E"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/coffee_image_description"
+                    android:src="@drawable/icon_arrow_down" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/bg_brown_button_curved"
+                android:text="Order"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
