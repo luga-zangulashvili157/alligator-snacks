@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <TextView android:id="@+id/textView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="git remote add origin https://github.com/luga-zangulashvili157/alligator-snacks.git&#xA;git branch -M main&#xA;git push -u origin main" />
-    <!-- thing 123 for test jsaaaaaajssjaaajsjaaaajsjajjsjajjj-->
-</selector>
