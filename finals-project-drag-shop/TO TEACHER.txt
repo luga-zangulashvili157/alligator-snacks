@@ -1,3 +1,5 @@
+TEACHER, PLEASE READ
+
 i tried and tried to make a proper page-preloading. what i mean is: we are on home page and next pages are garage, shopping (arrows lead to these pages). in my current version with no preloading, you first time click on these arrows and it takes you to these pages. the pages take time to load up.
 
 what preloading would do, is, if we were on home page, it would already load up garage page and shopping page in the background, so that when you clicked on them, they would instantly load. i mean it would show you the page instantly. all neighboring pages of any page (that the user is standing on) would load.
