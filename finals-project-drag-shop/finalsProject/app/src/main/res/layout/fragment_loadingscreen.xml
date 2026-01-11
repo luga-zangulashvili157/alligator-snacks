@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#F5F5F5"
+    android:padding="24dp">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="55dp">
+
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/logo"
+            app:tint="#212B21"
+            android:layout_marginEnd="14dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DRAG SHOP"
+            android:textColor="#212B21"
+            android:textSize="40sp"
+            android:fontFamily="@font/bahnschrift_regular" />
+
+    </LinearLayout>
+
+
+
+    <ImageView
+        android:id="@+id/wheelImage"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:src="@drawable/loading_screen_wheel"
+        android:layout_marginBottom="55dp"
+        app:tint="#212B21"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="preloading home"
+        android:fontFamily="@font/bahnschrift_regular"
+        android:textColor="#212B21"
+        android:textSize="40sp" />
+
+</LinearLayout>

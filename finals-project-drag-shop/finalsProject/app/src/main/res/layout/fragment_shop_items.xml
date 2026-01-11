@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include
+        layout="@layout/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/backgroundShopItems"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:background="#f5f5f5"
+        android:layout_weight="1">
+
+
+
+        <LinearLayout
+            android:id="@+id/shopItemsBar"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/shopItemsBackarrowIcon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:src="@drawable/arrow_left"
+                app:tint="#212B21"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:id="@+id/shopItemsText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SHOP ITEMS"
+                android:gravity="center"
+                android:textColor="#212B21"
+                android:textSize="35sp"
+                android:textFontWeight="650" />
+
+            <ImageView
+                android:id="@+id/invisible2"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:src="@drawable/arrow_left"
+                app:tint="#f5f5f5" />
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/TrackParts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:id="@+id/trackTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TRACK/DRIFT PARTS"
+                android:fontFamily="@font/bahnschrift_regular"
+                android:textColor="#212B21"
+                android:textSize="25sp"
+                android:textFontWeight="550"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="290dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_height="160dp"
+                app:cardCornerRadius="16dp"
+                android:clipChildren="true"
+                android:clipToPadding="true">
+
+                <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_height="match_parent"
+                    android:clipChildren="true"
+                    android:clipToPadding="true">
+
+
+                    <ImageView
+                        android:id="@+id/trackPlaceholder"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/placeholder"
+                        android:adjustViewBounds="true"
+                        />
+
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+
+                <ImageView
+                    android:id="@+id/arrowTrack"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/arrow_right"
+                    app:tint="#a7a9ac"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/DragParts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/DragTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DRAG RACE PARTS"
+                android:fontFamily="@font/bahnschrift_regular"
+                android:textColor="#212B21"
+                android:textSize="25sp"
+                android:textFontWeight="550"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="290dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_height="160dp"
+                    app:cardCornerRadius="16dp"
+                    android:clipChildren="true"
+                    android:clipToPadding="true">
+
+                    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_height="match_parent"
+                        android:clipChildren="true"
+                        android:clipToPadding="true">
+
+
+                        <ImageView
+                            android:id="@+id/DragPlaceholder"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/placeholder"
+                            android:adjustViewBounds="true"
+                            />
+
+                    </FrameLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <ImageView
+                    android:id="@+id/arrowDrag"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/arrow_right"
+                    app:tint="#a7a9ac"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+        <TextView
+            android:id="@+id/shopItemsWarning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="please note that tuning cars for street racing is very dangerous for YOU and especially other people (pedestrians, passengers). danger increases exponentially, as each single mile-per-hour increases."
+            android:textSize="18sp"
+            android:textColor="#828487"
+            android:paddingHorizontal="15dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"/>
+
+
+
+
+
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

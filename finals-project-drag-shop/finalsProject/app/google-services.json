@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1087414217168",
+    "firebase_url": "https://finalstask-914-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "finalstask-914",
+    "storage_bucket": "finalstask-914.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087414217168:android:d757411032fc9ca87e71d5",
+        "android_client_info": {
+          "package_name": "com.example.finalsproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADHh3VKjBP4g6L4cFdXLhS4M3ibmGIuzY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

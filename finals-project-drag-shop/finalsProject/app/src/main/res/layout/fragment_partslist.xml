@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout android:id="@+id/backgroundPartsList"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:background="#f5f5f5"
+        android:layout_weight="1">
+
+        <LinearLayout android:id="@+id/partsListBar"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:paddingHorizontal="15dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:layout_height="wrap_content">
+
+            <ImageView android:id="@+id/partsListBackarrowIcon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="bottom"
+                android:src="@drawable/arrow_left"
+                app:tint="#212B21"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView android:id="@+id/partsListText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:text="placeholder text"
+                android:gravity="center"
+                android:fontFamily="@font/bahnschrift_regular"
+                android:textColor="#212B21"
+                android:textSize="32sp"
+                android:textFontWeight="650" />
+
+            <ImageView android:id="@+id/invisible5"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="bottom"
+                android:src="@drawable/arrow_left"
+                app:tint="#f5f5f5" />
+
+        </LinearLayout>
+
+        <EditText android:id="@+id/search_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="search parts..."
+            android:textColorHint="#212B21"
+            android:textColor="#212B21"
+            android:drawableStart="@drawable/speedometer_search"
+            android:drawablePadding="10dp"
+            android:backgroundTint="#e6e7e8"
+            android:background="@drawable/search_background"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginVertical="10dp"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/noResultsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="nothing matching found. contact us and we can make the part you need."
+            android:gravity="center"
+            android:textColor="#212B21"
+            android:textSize="22sp"
+            android:padding="20dp"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/partsListRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:clipToPadding="false"/>
+
+    </LinearLayout>
+
+    <TextView android:id="@+id/ourAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="cant find the part youre looking for?\ncontact us:\n+67 123-456-789-0 (idkland HQ)\n+76 0-987-654-321 (QH dnalkdi)\n\nour adress: idkcontinent, idkland, idkcity, idkdistrict, idkstreet N: idk."
+        android:textSize="18sp"
+        android:textColor="#828487"
+        android:background="#f5f5f5"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:gravity="center_vertical"/>
+
+    <include layout="@layout/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

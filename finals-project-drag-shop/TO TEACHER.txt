@@ -1,0 +1,10 @@
+i tried and tried to make a proper page-preloading. what i mean is: we are on home page and next pages are garage, shopping (arrows lead to these pages). in my current version with no preloading, you first time click on these arrows and it takes you to these pages. the pages take time to load up.
+
+what preloading would do, is, if we were on home page, it would already load up garage page and shopping page in the background, so that when you clicked on them, they would instantly load. i mean it would show you the page instantly. all neighboring pages of any page (that the user is standing on) would load.
+
+i also tried making a sliding animation between pages (front left to right, and vice versa), but i got a stroke doing it so i sticked with the fade animation.
+
+i thought about having a shopping cart system and its totally possible, but i also wrote down the needed functionality for it and concluded that its way too complex and time consuming (another 3-4 days), considering that i also have to manage many other subjects (4).
+
+
+youll see a lot of comments in my code not removed. is that because i was lazy to remove? nope, its there because i in fact ADDED them, so that in google meet when we present the code, i will know what to say about which code block.

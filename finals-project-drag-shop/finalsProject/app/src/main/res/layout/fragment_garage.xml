@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include
+        layout="@layout/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/backgroundGarage"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:background="#f5f5f5"
+        android:layout_weight="1">
+
+
+
+        <LinearLayout
+            android:id="@+id/garageBar"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/garageBackarrowIcon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="bottom"
+                android:src="@drawable/arrow_left"
+                app:tint="#212B21"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:id="@+id/garageText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:text="THE GARAGE"
+                android:gravity="center"
+                android:fontFamily="@font/bahnschrift_regular"
+                android:textColor="#212B21"
+                android:textSize="32sp"
+                android:textFontWeight="650" />
+
+            <ImageView
+                android:id="@+id/invisible"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="bottom"
+                android:src="@drawable/arrow_left"
+                app:tint="#f5f5f5" />
+
+
+        </LinearLayout>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/garageRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:clipToPadding="false"/>
+
+
+
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+
+
+
+
+
+
+<!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+<TextView
+android:id="@+id/postTitle"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="title placeholder text"
+android:fontFamily="@font/bahnschrift_regular"
+android:textColor="#212B21"
+android:textSize="22sp"
+android:textFontWeight="550"
+android:paddingStart="20dp"
+android:paddingEnd="20dp"/>
+
+<androidx.cardview.widget.CardView
+android:layout_width="match_parent"
+android:layout_margin="15dp"
+android:layout_height="230dp"
+app:cardCornerRadius="16dp"
+android:clipChildren="true"
+android:clipToPadding="true">
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:layout_height="match_parent"
+    android:clipChildren="true"
+    android:clipToPadding="true">
+
+    <ImageView
+        android:id="@+id/postPicture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder"
+        android:adjustViewBounds="true" />
+
+</FrameLayout>
+</androidx.cardview.widget.CardView>
+
+<TextView
+android:id="@+id/postDescription"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="description placeholder text"
+android:fontFamily="@font/bahnschrift_regular"
+android:textColor="#828487"
+android:textSize="18sp"
+android:textFontWeight="550"
+android:paddingStart="20dp"
+android:paddingEnd="20dp"/>
+
+
+    </LinearLayout>
+
+-->
