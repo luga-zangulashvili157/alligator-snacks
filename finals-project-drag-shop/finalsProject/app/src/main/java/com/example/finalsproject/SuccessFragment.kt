@@ -2,28 +2,31 @@ package com.example.finalsproject
 
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.example.finalsproject.databinding.FragmentSuccessBinding
 
 class SuccessFragment : Fragment(R.layout.fragment_success) {
 
+    private var _binding: FragmentSuccessBinding? = null
+    private val binding get() = _binding!!
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentSuccessBinding.bind(view)
 
-        val imageView = view.findViewById<ImageView>(R.id.zhatapicture)
-
-        val imageUrl = "https://firebasestorage.googleapis.com/v0/b/finalstask-914.firebasestorage.app/o/dog.jpg?alt=media&token=20090459-bc41-40de-b125-0ebd6e1ba685"
+        val imageUrl =
+            "https://firebasestorage.googleapis.com/v0/b/finalstask-914.firebasestorage.app/o/dog.jpg?alt=media&token=20090459-bc41-40de-b125-0ebd6e1ba685"
 
         // zhata image
 
         Glide.with(this)
             .load(imageUrl)
             .placeholder(R.drawable.placeholder) // load zhata into zhatapicture
-            .into(imageView)
+            .into(binding.zhatapicture)
 
         // make the whole fragment clickable
-        view.setOnClickListener {
+        binding.root.setOnClickListener {
             val fragment = HomeFragment() // navigate to home fragment with fade animation
             parentFragmentManager.beginTransaction()
                 .setCustomAnimations(
@@ -33,6 +36,10 @@ class SuccessFragment : Fragment(R.layout.fragment_success) {
                 .replace(R.id.fragmentContainer, fragment)
                 .commit()
         }
+    }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null // avoid memory leaks
     }
 }

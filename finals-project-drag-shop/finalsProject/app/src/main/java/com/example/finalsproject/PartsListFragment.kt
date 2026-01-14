@@ -5,43 +5,37 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.finalsproject.databinding.FragmentPartslistBinding
 import com.google.firebase.database.*
 
 class PartsListFragment : Fragment(R.layout.fragment_partslist) {
 
     private lateinit var adapter: PartsListAdapter // adapter for recyclerview
-    private lateinit var recyclerView: RecyclerView
     private lateinit var database: DatabaseReference
-    private lateinit var noResultsText: TextView // textview for no results
-
     private var allParts: List<PartsListItem> = emptyList()
+
+    private var _binding: FragmentPartslistBinding? = null // reference starts as null and gets assigned when the fragment’s view is created (onViewCreated). we later clear it in onDestroyView() to avoid memory leaks.
+    private val binding get() = _binding!! // _binding!!!1
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentPartslistBinding.bind(view)
 
-        val titleText = view.findViewById<TextView>(R.id.partsListText) // category title goes to partsListText
         val category = arguments?.getString("category") ?: "track" // get the argument called category, or use a default (track) if it’s missing
 
-        titleText.text = when (category) { // go to which parts list (according to category)
+        binding.partsListText.text = when (category) { // go to which parts list (according to category)
             "drag" -> "DRAG PARTS"
             "track" -> "TRACK/DRIFT PARTS"
             else -> "PARTS LIST"
         }
 
-        val backArrow = view.findViewById<ImageView>(R.id.partsListBackarrowIcon)
-        backArrow.setOnClickListener {
+        binding.partsListBackarrowIcon.setOnClickListener {
             (activity as MainActivity).navigateTo(ShopItemsFragment()) // goes back to shopItemsFragment
         }
 
-        recyclerView = view.findViewById(R.id.partsListRecycler)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        noResultsText = view.findViewById(R.id.noResultsText) // for search no results
+        binding.partsListRecycler.layoutManager = LinearLayoutManager(requireContext()) // display the list in a vertical scrolling column (or horizontal if specified). without a layout manager, the recyclerView wouldn’t know how to display its children.
 
         adapter = PartsListAdapter(emptyList()) { part ->
             val fragment = BuyItemFragment().apply {
@@ -62,9 +56,7 @@ class PartsListFragment : Fragment(R.layout.fragment_partslist) {
                 .addToBackStack(null)
                 .commit()
         }
-        recyclerView.adapter = adapter
-
-
+        binding.partsListRecycler.adapter = adapter
 
         database = FirebaseDatabase.getInstance().getReference("shopParts") // get data from shopParts section
 
@@ -87,8 +79,7 @@ class PartsListFragment : Fragment(R.layout.fragment_partslist) {
             }
         })
 
-        val searchInput = view.findViewById<EditText>(R.id.search_input) // search bar
-        searchInput.addTextChangedListener(object : TextWatcher {
+        binding.searchInput.addTextChangedListener(object : TextWatcher {  // search bar
             override fun afterTextChanged(s: Editable?) {
                 val query = s.toString().trim() // takes search input, converts to string and trims off extra spaces
 
@@ -100,15 +91,20 @@ class PartsListFragment : Fragment(R.layout.fragment_partslist) {
 
                 if (filtered.isEmpty()) {
                     adapter.updateList(emptyList())
-                    noResultsText.visibility = View.VISIBLE // if no results, show no results text
+                    binding.noResultsText.visibility = View.VISIBLE // if no results, show no results text
                 } else {
                     adapter.updateList(filtered)
-                    noResultsText.visibility = View.GONE // if results, hide no results text
+                    binding.noResultsText.visibility = View.GONE // if results, hide no results text
                 }
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {} // to react to the previous text state right before the users edit happens.
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {} // this is for live search (responds immediately as the user types)
         })
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null // again, avoid memory leak
     }
 }

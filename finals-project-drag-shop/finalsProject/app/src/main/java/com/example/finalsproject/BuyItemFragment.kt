@@ -2,10 +2,9 @@ package com.example.finalsproject
 
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.example.finalsproject.databinding.FragmentBuyitemBinding
 import java.util.Locale
 
 class BuyItemFragment : Fragment(R.layout.fragment_buyitem) {
@@ -13,16 +12,13 @@ class BuyItemFragment : Fragment(R.layout.fragment_buyitem) {
     private var quantity = 1
     private var unitPrice = 0.0
 
+    // Binding reference
+    private var _binding: FragmentBuyitemBinding? = null
+    private val binding get() = _binding!!
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val imageView = view.findViewById<ImageView>(R.id.ItemMainPicture)
-        val titleView = view.findViewById<TextView>(R.id.ItemMainTitle)
-        val descriptionView = view.findViewById<TextView>(R.id.ItemDetailedDescription)
-        val priceView = view.findViewById<TextView>(R.id.SpecitemPrice)
-        val quantityText = view.findViewById<TextView>(R.id.quantityText)
-        val buttonMinus = view.findViewById<ImageView>(R.id.buttonMinus)
-        val buttonPlus = view.findViewById<ImageView>(R.id.buttonPlus)
+        _binding = FragmentBuyitemBinding.bind(view)
 
         // get arguments from PartsListFragment
         val name = arguments?.getString("name") ?: ""
@@ -30,45 +26,41 @@ class BuyItemFragment : Fragment(R.layout.fragment_buyitem) {
         val imageUrl = arguments?.getString("imageUrl") ?: ""
         unitPrice = arguments?.getDouble("price") ?: 0.0
 
-
-        titleView.text = name
-        descriptionView.text = description // bind data
-        priceView.text = String.format(Locale.US, "$%,.2f", unitPrice)
+        // bind data to views
+        binding.ItemMainTitle.text = name
+        binding.ItemDetailedDescription.text = description
+        binding.SpecitemPrice.text = String.format(Locale.US, "$%,.2f", unitPrice)
 
         Glide.with(this)
             .load(imageUrl)
-            .placeholder(R.drawable.placeholder) // load the image with glide
-            .into(imageView)
+            .placeholder(R.drawable.placeholder)
+            .into(binding.ItemMainPicture)
 
-        // Back arrow
-        view.findViewById<ImageView>(R.id.ItemBackarrowIcon).setOnClickListener {
+        // back arrow
+        binding.ItemBackarrowIcon.setOnClickListener {
             parentFragmentManager.popBackStack()
         } // go back to partsList
 
         // quantity selector logic
         fun updateUI() {
-            quantityText.text = quantity.toString()
+            binding.quantityText.text = quantity.toString()
             val totalPrice = unitPrice * quantity
-            priceView.text = String.format(Locale.US, "$%,.2f", totalPrice)
+            binding.SpecitemPrice.text = String.format(Locale.US, "$%,.2f", totalPrice)
         } //update quantity number (the 1 or 2 or etc) and update price (original*quantity), bind it with $ sign
 
-        buttonMinus.setOnClickListener {
+        binding.buttonMinus.setOnClickListener {
             if (quantity > 1) {
                 quantity--
                 updateUI()
             }
         }
 
-        buttonPlus.setOnClickListener {
+        binding.buttonPlus.setOnClickListener {
             quantity++
             updateUI()
         }
 
-
-
-        val buyButton = view.findViewById<TextView>(R.id.buyButtonText)
-
-        buyButton.setOnClickListener {
+        binding.buyButtonText.setOnClickListener {
             val fragment = OrderConfirmationFragment().apply {
                 arguments = Bundle().apply {
                     putInt("quantity", quantity) // pass chosen quantity
@@ -87,16 +79,17 @@ class BuyItemFragment : Fragment(R.layout.fragment_buyitem) {
                 .addToBackStack(null)
                 .commit()
         } // fade to the next fragment with arguments
-
     }
-
 
     override fun onResume() {
         super.onResume()
         quantity = 1
-        view?.findViewById<TextView>(R.id.quantityText)?.text = quantity.toString()
-        view?.findViewById<TextView>(R.id.SpecitemPrice)?.text =
-            String.format(Locale.US, "$%,.2f", unitPrice)
+        binding.quantityText.text = quantity.toString()
+        binding.SpecitemPrice.text = String.format(Locale.US, "$%,.2f", unitPrice)
     } // once we return back to here (from orderConfirmation) we reset the quantity to 1 and price to original
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null // avoid memory leaks
+    }
 }
